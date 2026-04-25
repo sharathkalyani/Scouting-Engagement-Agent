@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3002,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: process.env.API_URL || 'http://localhost:3001',
         changeOrigin: true,
       },
     },
@@ -15,5 +15,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+  },
+  define: {
+    'process.env.API_URL': JSON.stringify(process.env.API_URL || ''),
   },
 });
