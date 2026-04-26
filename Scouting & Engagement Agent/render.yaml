@@ -1,0 +1,16 @@
+services:
+  - name: talent-scout-backend
+    type: web
+    env: node
+    root: packages/backend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+
+  - name: talent-scout-frontend
+    type: static
+    env: static
+    root: packages/frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist

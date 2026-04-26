@@ -1,21 +1,27 @@
 # AI-Powered Talent Scouting & Engagement Agent
 
-This repository contains a working prototype of a recruiter copilot that:
+This monorepo contains a recruiter copilot prototype with a full frontend and backend implementation.
 
-- parses a job description into structured hiring signals
-- discovers matching candidates from a mock talent pool
-- explains why each candidate matches
-- simulates recruiter outreach to estimate candidate interest
-- ranks a shortlist with `Match Score` and `Interest Score`
+- `packages/backend`: Express + TypeScript API server
+- `packages/frontend`: React + Vite single-page app
+- `packages/shared`: shared TypeScript types used by both packages
+- `render.yaml`: Render deployment configuration for backend and frontend
 
-The current implementation is intentionally demo-friendly and works without a live LLM key. The backend uses deterministic parsing, scoring, and conversation simulation so the full flow runs locally.
+The app can:
+- parse a job description into structured hiring signals
+- discover matching candidates from a mock talent pool
+- explain why each candidate matches
+- simulate recruiter outreach and estimate interest
+- rank a shortlist using `Match Score` and `Interest Score`
+
+The implementation is demo-friendly and works locally without a live LLM key. The backend uses deterministic parsing, scoring, and conversation simulation so the full flow runs without OpenAI if needed.
 
 ## What is included
 
-- React frontend for JD input and shortlist review
-- Express + TypeScript backend with end-to-end APIs
-- architecture write-up in [ARCHITECTURE.md](/d:/Scouting%20&%20Engagement%20Agent/ARCHITECTURE.md)
-- demo walkthrough script in [DEMO_SCRIPT.md](/d:/Scouting%20&%20Engagement%20Agent/DEMO_SCRIPT.md)
+- React frontend for job description input and shortlist review
+- Express backend with end-to-end API routes
+- architecture write-up in [ARCHITECTURE.md](ARCHITECTURE.md)
+- demo walkthrough script in [DEMO_SCRIPT.md](DEMO_SCRIPT.md)
 - sample input/output files in `samples/`
 
 ## Local setup
