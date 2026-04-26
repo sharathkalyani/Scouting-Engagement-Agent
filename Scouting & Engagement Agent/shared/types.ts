@@ -77,6 +77,7 @@ export interface EngagementSession {
   initial_interest_level?: number; // 1-10
   final_interest_level?: number; // 1-10
   interest_score?: number; // Detailed scoring
+  interest_assessment?: InterestAssessment;
   engagement_status: 'initiated' | 'in_progress' | 'concluded';
   created_at: number;
   updated_at: number;
@@ -147,11 +148,22 @@ export interface APIResponse<T> {
 }
 
 // ===============================
-// UI State Types
+// Pipeline Result Types
 // ===============================
-export interface ProcessingState {
-  step: 'idle' | 'parsing_jd' | 'finding_candidates' | 'engaging' | 'generating_shortlist' | 'complete' | 'error';
-  progress: number; // 0-100
-  current_action: string;
-  error?: string;
+export interface PipelineResult {
+  parsed_jd?: {
+    technical_skills?: string[];
+    key_responsibilities?: string[];
+  };
+  ranked_candidates?: RankedCandidate[];
+  top_candidates?: RankedCandidate[];
+  statistics?: {
+    total: number;
+    average_match_score: number;
+    average_interest_score: number;
+    high_interest_count: number;
+    strong_fit_count: number;
+  };
+  recommendations?: string[];
+  scoring_explanation?: string;
 }

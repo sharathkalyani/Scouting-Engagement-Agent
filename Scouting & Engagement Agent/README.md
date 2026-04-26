@@ -5,7 +5,6 @@ This monorepo contains a recruiter copilot prototype with a full frontend and ba
 - `backend`: Express + TypeScript API server
 - `frontend`: React + Vite single-page app
 - `shared`: shared TypeScript types used by both packages
-- `render.yaml`: Render deployment configuration for backend and frontend
 
 The app can:
 - parse a job description into structured hiring signals
@@ -100,4 +99,3 @@ Example request:
 - Demo video: record using [DEMO_SCRIPT.md](/d:/Scouting%20&%20Engagement%20Agent/DEMO_SCRIPT.md)
 - Architecture diagram and scoring description: [ARCHITECTURE.md](/d:/Scouting%20&%20Engagement%20Agent/ARCHITECTURE.md)
 - Sample inputs and outputs: included in `samples/`
-
