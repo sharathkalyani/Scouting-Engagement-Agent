@@ -1,0 +1,21 @@
+services:
+  - name: talent-scout-backend
+    type: web
+    env: node
+    root: backend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false # You need to set this manually
+
+  - name: talent-scout-frontend
+    type: static
+    env: static
+    root: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
