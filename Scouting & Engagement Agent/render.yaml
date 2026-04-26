@@ -10,7 +10,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: OPENAI_API_KEY
-        sync: false # You need to set this manually
+        sync: false
 
   - name: talent-scout-frontend
     type: static
