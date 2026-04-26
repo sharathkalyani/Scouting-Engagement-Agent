@@ -1,7 +1,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { matchCandidates } from '../packages/backend/src/candidate-matcher';
-import { searchCandidatesBySkills, getAllMockCandidates } from '../packages/backend/src/mock-data';
-import { APIResponse, FindCandidatesRequest } from '../packages/shared/types';
+import { matchCandidates } from '../backend/src/candidate-matcher';
+import { searchCandidatesBySkills, getAllMockCandidates } from '../backend/src/mock-data';
+import { APIResponse, FindCandidatesRequest } from '../shared/types';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -52,3 +52,4 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     } as APIResponse<null>);
   }
 };
+

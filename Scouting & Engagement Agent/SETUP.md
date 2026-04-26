@@ -42,7 +42,7 @@ npm install
 
 ```bash
 # Navigate to backend directory
-cd packages/backend
+cd backend
 
 # Copy the example environment file
 cp .env.example .env
@@ -412,7 +412,7 @@ npm run type-check -w backend
 
 **Solution**:
 ```bash
-cd packages/backend
+cd backend
 npm install
 # or
 npm install openai
@@ -439,14 +439,14 @@ PORT=3002
 
 **Solution**:
 ```bash
-# Check .env file exists in packages/backend
-cat packages/backend/.env
+# Check .env file exists in backend
+cat backend/.env
 
 # Make sure it contains:
 OPENAI_API_KEY=sk-proj-...
 
 # If not, add it
-echo "OPENAI_API_KEY=your_key_here" >> packages/backend/.env
+echo "OPENAI_API_KEY=your_key_here" >> backend/.env
 ```
 
 ### Issue: "Cannot GET / on frontend"
@@ -469,7 +469,7 @@ echo "OPENAI_API_KEY=your_key_here" >> packages/backend/.env
 
 ## 🚀 Next Steps
 
-1. **Customize Candidates**: Edit `packages/backend/src/mock-data.ts` to add real candidates
+1. **Customize Candidates**: Edit `backend/src/mock-data.ts` to add real candidates
 2. **Integrate ATS**: Connect to your Applicant Tracking System
 3. **Add Database**: Replace mock data with persistent Postgres/MongoDB
 4. **Email Integration**: Add outreach via email service (Sendgrid, etc.)
@@ -478,3 +478,4 @@ echo "OPENAI_API_KEY=your_key_here" >> packages/backend/.env
 ---
 
 **Ready to scout talent! 🎯**
+

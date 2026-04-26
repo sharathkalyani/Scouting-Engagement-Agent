@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { getMockJob } from '../packages/backend/src/mock-data';
+import { getMockJob } from '../backend/src/mock-data';
 import { v4 as uuidv4 } from 'uuid';
 import {
   calculateMatchScore,
@@ -8,8 +8,8 @@ import {
   generateScoringExplanation,
   generateRecommendations,
   generateStatistics,
-} from '../packages/backend/src/scoring';
-import { APIResponse, RankedCandidate, ShortlistResult } from '../packages/shared/types';
+} from '../backend/src/scoring';
+import { APIResponse, RankedCandidate, ShortlistResult } from '../shared/types';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -90,3 +90,4 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     } as APIResponse<null>);
   }
 };
+

@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { parseJobDescription, extractSearchKeywords } from '../packages/backend/src/jd-parser';
-import { APIResponse } from '../packages/shared/types';
+import { parseJobDescription, extractSearchKeywords } from '../backend/src/jd-parser';
+import { APIResponse } from '../shared/types';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -45,3 +45,4 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     } as APIResponse<null>);
   }
 };
+

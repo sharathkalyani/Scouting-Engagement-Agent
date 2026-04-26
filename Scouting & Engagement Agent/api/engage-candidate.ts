@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { initiateEngagement, engageCandidate, assessInterest } from '../packages/backend/src/engagement-engine';
-import { APIResponse } from '../packages/shared/types';
+import { initiateEngagement, engageCandidate, assessInterest } from '../backend/src/engagement-engine';
+import { APIResponse } from '../shared/types';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -47,3 +47,4 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     } as APIResponse<null>);
   }
 };
+

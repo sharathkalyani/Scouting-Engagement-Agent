@@ -34,7 +34,7 @@ git push origin master
    - **Framework Preset:** Other (since we have both frontend and API)
    - **Root Directory:** `./` (leave blank, use default)
    - **Build Command:** `npm run build`
-   - **Output Directory:** `packages/frontend/dist`
+   - **Output Directory:** `frontend/dist`
    - **Install Command:** `npm install`
 
 5. **Environment Variables** (optional for now, can be added later):
@@ -43,7 +43,7 @@ git push origin master
 6. Click **Deploy**
 
 Vercel will automatically:
-- Build the frontend from `packages/frontend/`
+- Build the frontend from `frontend/`
 - Create serverless functions from files in `/api` folder
 - Deploy everything to a single URL
 
@@ -77,7 +77,7 @@ curl -X POST https://your-project.vercel.app/api/full-pipeline \
 
 If the build fails:
 1. Check the **Vercel Build Logs** in the dashboard
-2. Ensure all dependencies are in `package.json` or `packages/*/package.json`
+2. Ensure all dependencies are in `package.json` or `backend/package.json` and `frontend/package.json`
 3. Make sure TypeScript compiles (`npm run type-check`)
 
 ### API Not Working
@@ -104,10 +104,9 @@ The API already has CORS enabled for all origins. If you get CORS errors:
 │   ├── engage-candidate.ts      # POST /api/engage-candidate
 │   ├── generate-shortlist.ts    # POST /api/generate-shortlist
 │   └── full-pipeline.ts         # POST /api/full-pipeline
-├── packages/
-│   ├── frontend/                # React + Vite app
-│   │   └── dist/                # Built output (deployed to /)
-│   ├── backend/                 # Business logic (imported by /api)
+├── frontend/                # React + Vite app
+│   └── dist/                # Built output (deployed to /)
+├── backend/                 # Business logic (imported by /api)
 │   └── shared/                  # Shared types
 ├── vercel.json                  # Vercel configuration
 └── package.json                 # Dependencies
@@ -150,3 +149,4 @@ Or manually redeploy from the Vercel dashboard: **Project** → **Deployments** 
 - Customize domain: Settings → **Domains**
 - Enable Git Integration: Settings → **Git**
 - Monitor usage: Analytics tab
+

@@ -2,9 +2,9 @@
 
 This monorepo contains a recruiter copilot prototype with a full frontend and backend implementation.
 
-- `packages/backend`: Express + TypeScript API server
-- `packages/frontend`: React + Vite single-page app
-- `packages/shared`: shared TypeScript types used by both packages
+- `backend`: Express + TypeScript API server
+- `frontend`: React + Vite single-page app
+- `shared`: shared TypeScript types used by both packages
 - `render.yaml`: Render deployment configuration for backend and frontend
 
 The app can:
@@ -46,8 +46,8 @@ Apps:
 Or run them separately:
 
 ```bash
-npm run dev -w packages/backend
-npm run dev -w packages/frontend
+npm run dev -w backend
+npm run dev -w frontend
 ```
 
 ## API surface
@@ -100,3 +100,4 @@ Example request:
 - Demo video: record using [DEMO_SCRIPT.md](/d:/Scouting%20&%20Engagement%20Agent/DEMO_SCRIPT.md)
 - Architecture diagram and scoring description: [ARCHITECTURE.md](/d:/Scouting%20&%20Engagement%20Agent/ARCHITECTURE.md)
 - Sample inputs and outputs: included in `samples/`
+

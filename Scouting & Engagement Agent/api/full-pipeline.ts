@@ -1,8 +1,8 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { parseJobDescription, extractSearchKeywords } from '../packages/backend/src/jd-parser';
-import { matchCandidates } from '../packages/backend/src/candidate-matcher';
-import { initiateEngagement, engageCandidate, assessInterest } from '../packages/backend/src/engagement-engine';
-import { searchCandidatesBySkills } from '../packages/backend/src/mock-data';
+import { parseJobDescription, extractSearchKeywords } from '../backend/src/jd-parser';
+import { matchCandidates } from '../backend/src/candidate-matcher';
+import { initiateEngagement, engageCandidate, assessInterest } from '../backend/src/engagement-engine';
+import { searchCandidatesBySkills } from '../backend/src/mock-data';
 import {
   calculateMatchScore,
   calculateInterestScore,
@@ -10,8 +10,8 @@ import {
   generateScoringExplanation,
   generateRecommendations,
   generateStatistics,
-} from '../packages/backend/src/scoring';
-import { APIResponse, EngagementSession, CandidateMatch, RankedCandidate } from '../packages/shared/types';
+} from '../backend/src/scoring';
+import { APIResponse, EngagementSession, CandidateMatch, RankedCandidate } from '../shared/types';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -109,3 +109,4 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     } as APIResponse<null>);
   }
 };
+

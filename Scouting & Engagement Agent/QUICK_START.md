@@ -37,8 +37,8 @@ chmod +x install-deps.sh
 npm install
 
 # This installs all packages for:
-# - Backend (packages/backend)
-# - Frontend (packages/frontend)
+# - Backend (backend)
+# - Frontend (frontend)
 # - Root workspace
 ```
 
@@ -239,7 +239,7 @@ npm install openai uuid @types/node
 
 ### Customize Candidates
 
-Edit `packages/backend/src/mock-data.ts` to add your own candidates
+Edit `backend/src/mock-data.ts` to add your own candidates
 
 ### Deploy to Production
 
@@ -264,10 +264,9 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for cloud deployment options
 📄 QUICK_START.md         ← This file
 
 código/
-├── packages/
-│   ├── backend/          ← Express API server
-│   ├── frontend/         ← React UI app
-│   └── shared/           ← TypeScript types
+├── backend/          ← Express API server
+├── frontend/         ← React UI app
+└── shared/           ← TypeScript types
 ```
 
 ---
@@ -306,3 +305,4 @@ código/
 ---
 
 **Ready? Run `npm run dev` and go to http://localhost:3000! 🎉**
+

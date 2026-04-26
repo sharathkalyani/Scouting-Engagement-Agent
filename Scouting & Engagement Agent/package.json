@@ -4,17 +4,17 @@
   "description": "AI-Powered Talent Scouting & Engagement Agent",
   "private": true,
   "workspaces": [
-    "packages/backend",
-    "packages/frontend",
-    "packages/shared"
+    "backend",
+    "frontend",
+    "shared"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev -w packages/backend\" \"npm run dev -w packages/frontend\"",
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
     "build": "npm run build:backend && npm run build:frontend",
-    "build:backend": "npm run build -w packages/backend",
-    "build:frontend": "npm run build -w packages/frontend",
-    "start": "npm start -w packages/backend",
-    "type-check": "npm run type-check -w packages/backend && npm run type-check -w packages/frontend"
+    "build:backend": "npm run build -w backend",
+    "build:frontend": "npm run build -w frontend",
+    "start": "npm start -w backend",
+    "type-check": "npm run type-check -w backend && npm run type-check -w frontend"
   },
   "dependencies": {
     "@vercel/node": "^3.0.0",
@@ -40,3 +40,4 @@
     "tsx": "^4.7.0"
   }
 }
+

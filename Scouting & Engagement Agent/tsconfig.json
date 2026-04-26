@@ -16,14 +16,15 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./packages/shared/*"],
-      "@backend/*": ["./packages/backend/src/*"]
+      "@/*": ["./shared/*"],
+      "@backend/*": ["./backend/src/*"]
     }
   },
-  "include": ["packages/**/*.ts", "packages/**/*.tsx", "api/**/*.ts"],
+  "include": ["backend/**/*.ts", "backend/**/*.tsx", "frontend/**/*.ts", "frontend/**/*.tsx", "shared/**/*.ts", "api/**/*.ts"],
   "references": [
-    { "path": "./packages/backend" },
-    { "path": "./packages/frontend" },
-    { "path": "./packages/shared" }
+    { "path": "./backend" },
+    { "path": "./frontend" },
+    { "path": "./shared" }
   ]
 }
+

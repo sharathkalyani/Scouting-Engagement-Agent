@@ -27,15 +27,15 @@ Express API (/api/full-pipeline)
 
 ## Modules
 
-- `packages/backend/src/jd-parser.ts`
+- `backend/src/jd-parser.ts`
   Parses free-text JDs into a structured `ParsedJD` object using rules and keyword extraction.
-- `packages/backend/src/candidate-matcher.ts`
+- `backend/src/candidate-matcher.ts`
   Evaluates each candidate against the parsed JD and generates an explainable match summary.
-- `packages/backend/src/engagement-engine.ts`
+- `backend/src/engagement-engine.ts`
   Simulates a short recruiter-candidate conversation and converts the transcript into an interest assessment.
-- `packages/backend/src/scoring.ts`
+- `backend/src/scoring.ts`
   Produces shortlist rankings, summary statistics, and recruiter recommendations.
-- `packages/frontend/src/App.tsx`
+- `frontend/src/App.tsx`
   Orchestrates the UI flow from JD input to ranked shortlist output.
 
 ## Scoring
@@ -77,3 +77,4 @@ The final payload includes:
 - statistics
 - recommendations
 - scoring explanation
+

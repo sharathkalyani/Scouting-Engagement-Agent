@@ -10,7 +10,7 @@
 
 **Fix**:
 ```bash
-cd packages/backend
+cd backend
 npm install openai
 ```
 
@@ -31,7 +31,7 @@ npm run type-check
 
 **Fix**:
 ```bash
-cd packages/backend
+cd backend
 npm install
 ```
 
@@ -93,7 +93,7 @@ const engagementSessions: EngagementSession[] = [];  // ✅ Properly typed
 
 **Fix**:
 ```bash
-cd packages/backend
+cd backend
 cp .env.example .env
 # Edit .env and add your OPENAI_API_KEY
 ```
@@ -104,7 +104,7 @@ cp .env.example .env
 
 **Fix**:
 ```bash
-# Check your API key in packages/backend/.env
+# Check your API key in backend/.env
 OPENAI_API_KEY=sk-proj-YOUR_ACTUAL_KEY_HERE
 
 # Get a valid key from https://platform.openai.com/api-keys
@@ -175,7 +175,7 @@ curl http://localhost:3001/api/health
 
 ### Step 1: Check Compilation
 ```bash
-cd packages/backend
+cd backend
 npm run type-check
 
 # Expected output:
@@ -309,21 +309,22 @@ If errors persist, check:
 
 2. **Dependencies installed**
    ```bash
-   ls packages/backend/node_modules | grep -E "openai|uuid|express"
+   ls backend/node_modules | grep -E "openai|uuid|express"
    ```
 
 3. **Files exist**
    ```bash
-   ls -la packages/backend/src/
-   ls -la packages/frontend/src/
+   ls -la backend/src/
+   ls -la frontend/src/
    ```
 
 4. **Environment configured**
    ```bash
-   cat packages/backend/.env
+   cat backend/.env
    # Should have OPENAI_API_KEY set
    ```
 
 ---
 
 **Last Updated**: April 24, 2026
+

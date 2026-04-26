@@ -2,7 +2,7 @@ services:
   - name: talent-scout-backend
     type: web
     env: node
-    root: packages/backend
+    root: backend
     plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
@@ -10,7 +10,8 @@ services:
   - name: talent-scout-frontend
     type: static
     env: static
-    root: packages/frontend
+    root: frontend
     plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
+

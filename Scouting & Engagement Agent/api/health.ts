@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { APIResponse } from '../packages/shared/types';
+import { APIResponse } from '../shared/types';
 
 export default (req: VercelRequest, res: VercelResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -17,3 +17,4 @@ export default (req: VercelRequest, res: VercelResponse) => {
     timestamp: new Date().toISOString(),
   });
 };
+

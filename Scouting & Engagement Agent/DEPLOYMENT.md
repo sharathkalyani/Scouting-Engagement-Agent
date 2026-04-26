@@ -18,7 +18,7 @@
 3. **Configure Backend Service**
    ```
    Name: talent-scout-backend
-   Root Directory: packages/backend
+   Root Directory: backend
    Runtime: Node
    Build Command: npm install && npm run build
    Start Command: npm start
@@ -44,7 +44,7 @@
 2. **Configure Frontend**
    ```
    Name: talent-scout-frontend
-   Root Directory: packages/frontend
+   Root Directory: frontend
    Build Command: npm run build
    Publish Directory: dist
    ```
@@ -73,7 +73,7 @@
    ```bash
    heroku login
    heroku create talent-scout-backend
-   cd packages/backend
+   cd backend
    ```
 
 3. **Add Procfile**
@@ -107,7 +107,7 @@
 3. **Configure**
    ```
    Framework: Vite
-   Root Directory: packages/frontend
+   Root Directory: frontend
    Build Command: npm run build
    Output Directory: dist
    ```
@@ -134,10 +134,10 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY packages/backend ./packages/backend
-COPY packages/shared ./packages/shared
+COPY backend ./backend
+COPY shared ./shared
 
-WORKDIR /app/packages/backend
+WORKDIR /app/backend
 RUN npm run build
 
 EXPOSE 3001
@@ -163,7 +163,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: packages/backend/Dockerfile
+      dockerfile: backend/Dockerfile
     ports:
       - "3001:3001"
     environment:
@@ -174,7 +174,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: packages/frontend/Dockerfile
+      dockerfile: frontend/Dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -330,3 +330,4 @@ curl -H "Origin: https://frontend-url" \
 ---
 
 **Ready for production! 🚀**
+
